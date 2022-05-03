@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebEr.Models.TOrderDetail>
+
+@{
+    ViewBag.Title = "OrderDetail";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<h2>訂單明細</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FOrderGuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FPid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIsApproved)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOrderGuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FPid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIsApproved)
+        </td>
+
+    </tr>
+}
+
+</table>

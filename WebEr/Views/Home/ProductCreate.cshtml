@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <form method="post" action=" @Url.Action("ProductCreate") " enctype="multipart/form-data">
+        <div>
+
+            <p>
+                編號:<input type="text" name="FPid" id="FPid"
+                          value="" required />
+            </p>
+            <p>
+                品名:<input type="text" name="FName" id="FName"
+                          value="" required />
+            </p>
+            <p>
+                價格:<input type="text" name="FPrice" id="FPrice"
+                          value="" required />
+            </p>
+            <p>照片:<input type="file" name="photo" id="photo" multiple accept="image/*"></p>
+            <p>
+                <input type="submit" value="新增" />
+
+            </p>
+            @*@{
+                    if (ViewBag.Id != null && ViewBag.Name != null && ViewBag.Price != null)
+                    {
+                        <p>完成新增產品資料</p>
+                        <p>
+                            編號:@ViewBag.Id | 品名:@ViewBag.Name | 單價:@ViewBag.Price
+                        </p>
+                    }
+                }*@
+        </div>
+
+    </form>
+</body>
+</html>

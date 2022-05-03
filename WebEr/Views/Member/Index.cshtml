@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebEr.Models.TProduct>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row" style="margin-top:20px" ;>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="~/images/@item.FImg"
+                     style="width:200px;height:270px" ; />
+                <div class="caption">
+                    <h4>@item.FName</h4>
+                    <p>單價:@item.FPrice</p>
+                    <p>
+                        <a href="@Url.Action("Addcar","Member")?fPid=@item.FPid"
+                           class="btn btn-primary">加入購物車</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    }
+</div>

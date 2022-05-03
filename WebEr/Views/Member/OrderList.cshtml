@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebEr.Models.TOrder>
+
+@{
+    ViewBag.Title = "OrderList";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<h2>會員訂單列表</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FOrderGuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FReceiver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOrderGuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FReceiver)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FDate)
+        </td>
+        <td>
+        <a href="@Url.Action("OrderDetail")?FOrderGuid=@item.FOrderGuid" class="btn btn-info">訂單明細</a>
+        </td>
+    </tr>
+}
+
+</table>
